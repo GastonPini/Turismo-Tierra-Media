@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Tierra Media</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<form action="./nuevaPromocion" method="post">
+		<div class="form-row">
+		  <div class="col-md-8 mb-3">
+			<label for="nombre">Nombre</label>
+			<input name="nombre" type="text" class="form-control" id="nombre" required>
+		  </div>
+		  <div class="col-md-4 mb-3">
+			<!-- <label for="tipo">Tipo</label>
+			<input name="tipo" type="text" class="form-control" id="tipo" required> -->
+				<select name="tipo" id="tipo" class="selectpicker" class="col-md-12 mb-3">
+					<optgroup label="Aventura">
+						<option>Absoluta</option>
+						<option>Porcentual</option>
+						<option>AxB</option>
+					</optgroup>
+				</select>
+		  </div>
+		</div>
+		<div class="form-row">
+			<div class="col-md-4 mb-3">
+				<select class="selectpicker" class="col-md-12 mb-3">
+					<optgroup label="Aventura">
+						<option>Moria</option>
+						<option>Mordor</option>
+						<option>Bosque Negro</option>
+						<option>Gondor</option>
+					</optgroup>
+					<optgroup label="Paisaje">
+						<option>La comarca</option>
+						<option>Lothlorien</option>
+						<option>Disney</option>
+					</optgroup>
+					<optgroup label="Degustacion">
+						<option>Minas tirith</option>
+						<option>Abismo de helm</option>
+						<option>Rohan</option>
+					</optgroup>
+				</select>
+			</div>
+			<div class="col-md-4 mb-3">
+				<select class="selectpicker" name="datoExtra" id="datoExtra" class="col-md-12 mb-3">
+					<optgroup label="Aventura">
+						<option value="Moria">Moria</option>
+						<option value="Moria">Mordor</option>
+						<option value="Moria">Bosque Negro</option>
+						<option value="Moria">Gondor</option>
+					</optgroup>
+					<optgroup label="Paisaje">
+						<option value="Moria">La comarca</option>
+						<option value="Moria">Lothlorien</option>
+						<option value="Moria">Disney</option>
+					</optgroup>
+					<optgroup label="Degustacion">
+						<option value="Moria">Minas tirith</option>
+						<option value="Moria">Abismo de helm</option>
+						<option value="Moria">Rohan</option>
+					</optgroup>
+				</select>
+			</div>
+			<div class="col-md-4 mb-3">
+				<select class="selectpicker" class="col-md-12 mb-3">
+					<optgroup label="Aventura">
+							<option>Moria</option>
+							<option>Mordor</option>
+							<option>Bosque Negro</option>
+							<option>Gondor</option>
+						</optgroup>
+						<optgroup label="Paisaje">
+							<option>La comarca</option>
+							<option>Lothlorien</option>
+							<option>Disney</option>
+						</optgroup>
+						<optgroup label="Degustacion">
+							<option>Minas tirith</option>
+							<option>Abismo de helm</option>
+							<option>Rohan</option>
+						</optgroup>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+		  <div class="form-check">
+			<input name="activo" class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+			<label class="form-check-label" for="invalidCheck2">
+			  Activo
+			</label>
+		  </div>
+		</div>
+		<button class="btn btn-primary" type="submit">Crear</button>
+	  </form>
+</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>

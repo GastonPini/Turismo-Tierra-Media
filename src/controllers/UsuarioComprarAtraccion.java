@@ -17,7 +17,6 @@ import dao.UsuarioDao;
 import model.Atraccion;
 import model.Itinerario;
 import model.Usuario;
-import system.Catalogador;
 
 
 @WebServlet("/UsuarioComprarAtraccion")

@@ -1,12 +1,11 @@
 package nomodel;
 
-import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 import model.Atraccion;
 import model.Promocion;
+
 
 @Entity
 @DiscriminatorValue("AxB")	
@@ -14,8 +13,7 @@ public class AxB extends Promocion {
 
 	private Atraccion atraccionExtra;
 
-	public AxB(/*String id,String nombre, Set<Atraccion> atracciones, */Atraccion nuevaAtraccion) {
-		//super(id,nombre, atracciones);
+	public AxB(Atraccion nuevaAtraccion) {
 		this.atraccionExtra = nuevaAtraccion;
 	}
 
@@ -23,12 +21,7 @@ public class AxB extends Promocion {
 	public double calcularCostoFinal() {
 		return getCosto() - this.atraccionExtra.getCosto();
 	}
-/*
-	@Override
-	public double getTiempo() {
-		return super.getTiempo();// + atraccionExtra.getTiempo();
-	}
-*/
+
 	@Override
 	public boolean cupoDisponible() {
 		return super.cupoDisponible() && atraccionExtra.getCupo() > 0;

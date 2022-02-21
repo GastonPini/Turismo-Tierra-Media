@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 import model.Atraccion;
 
+
 public class ComparadorAtracciones implements Comparator<Atraccion> {
 
 	private static Integer esMayor = -1;
@@ -15,4 +16,5 @@ public class ComparadorAtracciones implements Comparator<Atraccion> {
 		}
 		return Double.compare(a1.getCosto(), a2.getCosto()) * esMayor;
 	}
+
 }

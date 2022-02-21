@@ -17,11 +17,12 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="Promocion")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING, name = "Tipo")
-public /*abstract*/ class Promocion extends Producto {
+public class Promocion extends Producto {
 	
 	@Id
 	private int id;
@@ -45,12 +46,6 @@ public /*abstract*/ class Promocion extends Producto {
 	
 	@Column(name = "activo")
 	private int activo;
-	/*
-	public Promocion(String id, String nombre, Set<Atraccion> atracciones) {
-		super(id, nombre);
-		this.atracciones = atracciones;
-	}
-	*/	
 	
 	public int getActivo() {
 		return activo;
@@ -63,7 +58,6 @@ public /*abstract*/ class Promocion extends Producto {
 	public Promocion() {
 		
 	}
-
 	
 	public int getId() {
 		return id;
@@ -108,20 +102,7 @@ public /*abstract*/ class Promocion extends Producto {
 			}
 		}
 	}
-/*
-	public abstract double calcularCostoFinal();
 
-	//@Override
-	public double getTiempo() {
-		double sumaTiempo = 0.0;
-
-		for (Atraccion atraccion : atracciones) {
-			sumaTiempo += atraccion.getTiempo();
-		}
-		return sumaTiempo;
-	}
-*/
-	//@Override
 	public double getCosto() {
 		double sumaCostos = 0.0;
 
@@ -137,7 +118,6 @@ public /*abstract*/ class Promocion extends Producto {
 		for (Atraccion atraccion : atracciones) {
 			if (!atraccion.hayCupo()) {
 				hayCupo = false;
-				//System.out.println("No hay cupo disponible.");
 				return hayCupo;
 			}
 		}
@@ -167,7 +147,6 @@ public /*abstract*/ class Promocion extends Producto {
 				+ ". Tiempo total: " + getTiempo();
 	}
 
-	//@Override
 	public String toStringArchivo() {
 		String aux = "";
 		for (Atraccion atraccion : atracciones) {
@@ -176,7 +155,6 @@ public /*abstract*/ class Promocion extends Producto {
 		return "	-Promocion: " + this.getNombre() + "\n" + "	Incluye: \n" + aux;
 	}
 
-	//@Override
 	public void comprado() {
 		this.restarCupo();
 	}
@@ -184,7 +162,7 @@ public /*abstract*/ class Promocion extends Producto {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	//@Override
+
 	public String tipoClase() {
 		return "Promocion";
 	}

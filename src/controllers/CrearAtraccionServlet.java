@@ -49,8 +49,6 @@ public class CrearAtraccionServlet extends HttpServlet {
 				activo = 0;
 			}
 
-			
-			
 			Atraccion atraccion = new Atraccion();
 			
 			atraccion.setNombre(nombre);
@@ -68,4 +66,5 @@ public class CrearAtraccionServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+
 }

@@ -3,13 +3,11 @@ package dao;
 import java.util.Collections;
 import java.util.List;
 
-import javax.persistence.Query;
-
 import org.hibernate.Session;
 
-import model.TipoAtraccion;
 import model.Usuario;
 import util.HibernateUtil;
+
 
 public class UsuarioDao {
 

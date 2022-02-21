@@ -3,15 +3,14 @@ package model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "TipoAtraccion")
 public class TipoAtraccion {
 
-	public TipoAtraccion() {
-	}
+	public TipoAtraccion() {}
 
 	public Integer getID() {
 		return ID;

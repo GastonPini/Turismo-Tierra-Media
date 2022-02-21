@@ -3,9 +3,8 @@ package model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="Itinerario")
@@ -14,13 +13,9 @@ public class Itinerario {
 	@Id
 	private int id;
 	
-	/*@OneToOne
-	@JoinColumn(name = "Usuario")*/
 	@Column(name = "id_Usuario")
 	private int idUsuario;
 	
-	/*@OneToOne
-	@JoinColumn(name = "Atraccion")*/
 	@Column(name = "id_Atraccion")
 	private int idAtraccion;
 	
@@ -51,4 +46,5 @@ public class Itinerario {
 	public Itinerario() {
 
 	}	
+
 }

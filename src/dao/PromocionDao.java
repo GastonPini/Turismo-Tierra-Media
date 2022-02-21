@@ -6,11 +6,13 @@ import java.util.List;
 import org.hibernate.Session;
 
 import model.Promocion;
-import model.Usuario;
+
 import util.HibernateUtil;
+
 
 public class PromocionDao {
 
+	@SuppressWarnings("unchecked")
 	public List<Promocion> all() {
 		try (Session session = HibernateUtil.getSessionFactory().openSession()) {
 
@@ -53,4 +55,5 @@ public class PromocionDao {
         }
         return null;
 	}
+
 }

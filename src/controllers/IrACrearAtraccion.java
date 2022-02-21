@@ -13,9 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.hibernate.HibernateException;
 
 import dao.AtraccionDao;
-import dao.TipoAtraccionDao;
 import model.Atraccion;
-import model.TipoAtraccion;
+
 
 @WebServlet("/irACrearAtraccion")
 public class IrACrearAtraccion extends HttpServlet {

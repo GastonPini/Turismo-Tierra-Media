@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 import model.Promocion;
 
+
 public class ComparadorPromocion implements Comparator<Promocion> {
 
 	private static Integer esMayor = -1;
@@ -15,4 +16,5 @@ public class ComparadorPromocion implements Comparator<Promocion> {
 		}
 		return Double.compare(p1.calcularCostoFinal(), p2.calcularCostoFinal()) * esMayor;
 	}
+
 }

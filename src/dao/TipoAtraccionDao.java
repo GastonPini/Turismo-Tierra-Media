@@ -34,4 +34,5 @@ public class TipoAtraccionDao {
 		}
 		return Collections.EMPTY_LIST;
 	}
+
 }

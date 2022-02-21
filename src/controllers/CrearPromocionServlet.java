@@ -63,4 +63,5 @@ public class CrearPromocionServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+
 }

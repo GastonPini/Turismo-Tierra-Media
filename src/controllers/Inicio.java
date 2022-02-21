@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.UsuarioDao;
-import model.Usuario;
 
 @WebServlet("/inicio")
 public class Inicio extends HttpServlet {
@@ -23,4 +21,5 @@ public class Inicio extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/saludo");
         dispatcher.forward(request, response);
 	}
+
 }

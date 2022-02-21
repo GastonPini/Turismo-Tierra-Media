@@ -1,16 +1,14 @@
 package model;
 
 import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
 
-//@Entity
+
 @DiscriminatorValue("Absoluta")
 public class Absoluta extends Promocion {
 
 	private double descuento;
 
-	public Absoluta(/*String id, String nombre, Set<Atraccion> atracciones, */String descuento) {
-		//super(id, nombre, atracciones);
+	public Absoluta(String descuento) {
 		this.descuento = Double.parseDouble(descuento);
 	}
 
@@ -18,4 +16,5 @@ public class Absoluta extends Promocion {
 	public double calcularCostoFinal() {
 		return descuento;
 	}
+
 }

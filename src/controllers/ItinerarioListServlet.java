@@ -1,11 +1,6 @@
 package controllers;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +15,8 @@ import org.hibernate.HibernateException;
 
 import dao.AtraccionDao;
 import dao.ItinerarioDao;
-import dao.UsuarioDao;
 import model.Atraccion;
 import model.Itinerario;
-import model.Usuario;
 
 
 @WebServlet("/itinerarios")
@@ -61,4 +54,5 @@ public class ItinerarioListServlet extends HttpServlet {
 
 		doGet(request, response);
 	}
+
 }

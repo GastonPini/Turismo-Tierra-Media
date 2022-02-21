@@ -1,9 +1,7 @@
 package controllers;
 
 import java.io.IOException;
-import java.util.List;
 
-import javax.persistence.Query;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,15 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 import dao.TipoAtraccionDao;
 import dao.UsuarioDao;
 import model.TipoAtraccion;
 import model.Usuario;
+
 
 @WebServlet("/nuevoUsuario")
 public class CrearUsuarioServlet extends HttpServlet {
@@ -62,6 +57,7 @@ public class CrearUsuarioServlet extends HttpServlet {
 			} else {
 				activo = 0;
 			}
+
 			Usuario usuario = new Usuario();
 
 			usuario.setUsername(username);
@@ -80,4 +76,5 @@ public class CrearUsuarioServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+
 }

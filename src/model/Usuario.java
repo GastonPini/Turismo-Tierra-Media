@@ -1,28 +1,20 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import dao.ItinerarioDao;
 
+
 @Entity
 @Table(name = "Usuario")
 public class Usuario {
 
-	public Usuario() {
-	}
+	public Usuario() {}
 
 	@Id
 	private int id;
@@ -86,42 +78,21 @@ public class Usuario {
 		return itinerarioDao.tieneById(this.getId(), a.getId());
 	}
 
-	/*
-	 * public boolean tiene(Promocion p) { for (Producto producto : listaDeCompras)
-	 * { if (producto.equals(p)) { return true; } } for (Atraccion atraccion :
-	 * p.getAtracciones()) { if (this.tiene(atraccion)) return true; } return false;
-	 * }
-	 * 
-	 * public boolean tieneComprado(Producto p) { if(p.tipoClase() == "Atraccion") {
-	 * return tiene((Atraccion) p); }else { return tiene((Promocion) p); } }
-	 */
 	public boolean puedeComprar(Producto producto) {
 		return this.getDineroDisponible() >= producto.calcularCostoFinal()
 				&& this.getTiempoDisponible() >= producto.getTiempo() && producto.tieneCupo();
-		// && !tieneComprado(producto);
 	}
 
 	public double getCostoDeCompra() {
 		double sumatoriaDeCosto = 0;
-		/*
-		 * for (Producto producto : listaDeCompras) { sumatoriaDeCosto +=
-		 * producto.calcularCostoFinal(); }
-		 */
 		return sumatoriaDeCosto;
 	}
 
 	public double getTiempoDeCompra() {
 		double sumatoriaDeTiempo = 0;
-		/*
-		 * for (Producto producto : listaDeCompras) { sumatoriaDeTiempo +=
-		 * producto.getTiempo(); }
-		 */
 		return sumatoriaDeTiempo;
 	}
 
-	/*
-	 * public void setCompra(Producto Compra) { this.listaDeCompras.add(Compra); }
-	 */
 	public int getId() {
 		return id;
 	}
@@ -170,10 +141,4 @@ public class Usuario {
 		this.atraccionPreferida = atraccionPreferida;
 	}
 
-	/*
-	 * public Set<Atraccion> getListaDeCompras() { return listaDeCompras; }
-	 * 
-	 * public void setListaDeCompras(Set<Atraccion> listaDeCompras) {
-	 * this.listaDeCompras = listaDeCompras; }
-	 */
 }

@@ -1,18 +1,16 @@
 package nomodel;
 
 import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
 
 import model.Promocion;
 
-//@Entity
+
 @DiscriminatorValue("Porcentual")
 public class Porcentual extends Promocion {
 
 	private double descuento;
 
-	public Porcentual(/*String id,String nombre, Set<Atraccion> atracciones, */String descuento) {
-		//super(id,nombre, atracciones);
+	public Porcentual(String descuento) {
 		this.descuento = Double.parseDouble(descuento);
 	}
 
@@ -20,4 +18,5 @@ public class Porcentual extends Promocion {
 	public double calcularCostoFinal() {
 		return (getCosto() - (getCosto() * (this.descuento / 100)));
 	}
+
 }

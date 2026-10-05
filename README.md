@@ -1,95 +1,69 @@
 # Turismo Tierra Media
 
-A tourism management and recommendation system designed for a fictional Middle-earth amusement park.
+A Java web application for managing attractions, promotions, users and personalized itineraries for a fictional Middle-earth amusement park.
 
-The application manages attractions, users, promotions and itineraries, and generates personalized visit suggestions based on each user's preferences, available time and budget.
+The system generates personalized recommendations based on each user's preferences, available time and budget, and allows users to build and manage daily itineraries.
 
-## Overview
+## Features
 
-The system models a tourism platform where users can discover attractions and build personalized itineraries.
+- Attraction management
+- User management
+- Promotion management
+- Personalized attraction recommendations
+- Itinerary generation and management
+- User authentication and session management
+- Administrative access control
+- Attraction filtering based on user preferences
+- Budget and time constraints
+- Itinerary cost and duration summaries
 
-Each attraction has:
+## Recommendation System
 
-- Cost
-- Estimated duration
-- Daily visitor capacity
-- Type (landscape, adventure or tasting)
+The recommendation logic considers:
 
-Each user has:
-
+- User preferences
 - Available budget
 - Available time
-- Preferred attraction types
+- Attraction type
+- Previously purchased attractions and packages
 
-The system uses this information to generate recommendations and build the user's daily itinerary.
+The system generates recommendations according to the defined business rules.
 
-## Main Features
+Attractions and packages that the user cannot afford or complete within the available time are excluded from the recommendations.
 
-### Personalized recommendations
+## Promotions
 
-The system suggests attractions or packages according to the user's:
+The system supports three types of promotions:
 
-- Preferences
-- Available budget
-- Available time
+- **Percentage:** applies a percentage discount to the total price.
+- **Absolute:** offers a package at a fixed price.
+- **A × B:** purchasing a set of attractions provides another attraction for free.
 
-Recommendations prioritize packages and then consider attractions according to their cost and required time.
+These promotion types are modeled independently in the domain layer.
 
-Attractions that the user has already purchased or cannot afford or complete within the available time are excluded.
+## Architecture
 
-### Itinerary management
-
-Accepted attractions and packages are added to the user's daily itinerary.
-
-The system provides a summary including:
-
-- Total estimated time
-- Total cost
-- Selected attractions and packages
-
-### Promotions
-
-The system supports different types of promotions:
-
-- Percentage discounts
-- Fixed-price packages
-- A × B promotions, where purchasing a set of attractions provides another attraction for free
-
-## Data Model
-
-The application manages the following main entities:
-
-- Users
-- Attractions
-- Attraction types
-- Promotions
-- Itineraries
-
-Promotions can include one or multiple attractions and modify the total cost of an itinerary.
-
-## Project Structure
+The application is organized into several components:
 
 ```text
-├── src/             # Application source code
-├── WebContent/      # Web application resources
-├── database/        # Database scripts and data
-└── README.md
-```
+Web Interface
+      │
+      ▼
+Java Servlets / Controllers
+      │
+      ├── Filters
+      │
+      ▼
+DAO Layer
+      │
+      ▼
+Database
 
-## Purpose
 
-This project was developed as a software engineering project focused on object-oriented design, business rules, data persistence and recommendation logic.
-
-It demonstrates the implementation of a domain-driven application where multiple business constraints are combined to generate personalized recommendations and itineraries.
-
-## Status
-
-This is an academic/personal project and is preserved as a portfolio example.
 
 ## Author
 
-**Gastón Pini**
-
+**Gastón Pini**  
 Backend Developer | Data Engineer | Bioinformatics
 
-[GitHub](https://github.com/GastonPini)
+[LinkedIn](TU_LINK_DE_LINKEDIN) · [GitHub](https://github.com/GastonPini)

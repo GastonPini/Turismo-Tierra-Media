@@ -1,36 +1,69 @@
 # Turismo Tierra Media
 
-turismo-tierra-media es un sistema que cuenta con la información de las distintas atracciones de
-toda la Tierra Media.
-El sistema sugiere visitas a partir de la ubicación de los visitantes y también genera itinerarios a partir de la información de preferencias disponible en el perfil de los usuarios.
+Una aplicación web desarrollada en Java para gestionar atracciones, promociones, usuarios e itinerarios personalizados para un parque de diversiones ficticio de la Tierra Media.
 
-Cada atracción cuenta con su costo de visita, el promedio de tiempo necesario para realizarla, el cupo de visitantes diarios y el tipo de atracción (paisaje, de aventura, de degustación).
-Por su parte, para cada usuario el sistema conoce su presupuesto, el tiempo disponible para visitas y el tipo de atracción preferida.
+El sistema genera recomendaciones personalizadas en función de las preferencias de cada usuario, el tiempo disponible y el presupuesto, y permite a los usuarios crear y gestionar itinerarios diarios.
 
+## Funcionalidades
 
-### Algunos detalles de implementación:
+- Gestión de atracciones
+- Gestión de usuarios
+- Gestión de promociones
+- Recomendaciones personalizadas de atracciones
+- Generación y gestión de itinerarios
+- Autenticación de usuarios y gestión de sesiones
+- Control de acceso administrativo
+- Filtrado de atracciones según las preferencias del usuario
+- Restricciones de presupuesto y tiempo
+- Resúmenes del costo y duración de los itinerarios
 
-#### La base de datos contiene tablas para:
-- Tipo de Atracciones.
-- Atracciones.
-- Promociones.
-- Usuarios.
-- Itinerarios.
+## Sistema de Recomendaciones
 
+La lógica de recomendación considera:
 
-Cada promoción incluye una o varias atracciones y beneficia al usuario con una reducción del costo 
-total. Se espera que el sistema permita la definición de promociones de tres tipos:
-- Promociones porcentuales (X % de descuento en el costo total).
-- Promociones absolutas ($ X por todo el paquete).
-- Promociones A x B (si el usuario compra A,B,C entonces tiene gratis D).
+- Preferencias del usuario
+- Presupuesto disponible
+- Tiempo disponible
+- Tipo de atracción
+- Atracciones y paquetes adquiridos previamente
 
+El sistema genera recomendaciones de acuerdo con las reglas de negocio definidas.
 
-#### Para cada usuario, el sistema:
+Las atracciones y paquetes que el usuario no puede pagar o completar dentro del tiempo disponible son excluidos de las recomendaciones.
 
-- Sugiere una ​atracción que coincida con sus preferencias, costos y tiempos​. Se prioriza la oferta de paquetes, las atracciones más caras y que requieran mayor tiempo, en ese orden.
-No se oferta una atracción o paquete que no pueda costearse o para la cual no tenga tiempo disponible. Tampoco se oferta una atracción que ya haya sido incluida en un paquete comprado.
-Una vez agotadas las ofertas que coinciden con sus intereses, se ofertam aquellas que no coincidan, bajo el mismo criterio.
+## Promociones
 
-- Si el usuario acepta, se guarda dentro de su sugerencia diaria. Una atracción o paquete aceptado no se puede cancelar.
+El sistema admite tres tipos de promociones:
 
-- Se muestra un​ resumen de todo su itinerario​ , contabilizando las horas necesarias para realizarlo y las monedas que deberá gastar.
+- **Porcentual:** aplica un porcentaje de descuento sobre el precio total.
+- **Absoluta:** ofrece un paquete a un precio fijo.
+- **A × B:** la compra de un conjunto de atracciones proporciona otra atracción de forma gratuita.
+
+Estos tipos de promociones se modelan de forma independiente en la capa de dominio.
+
+## Arquitectura
+
+La aplicación está organizada en varios componentes:
+
+```text
+Interfaz Web
+      │
+      ▼
+Servlets Java / Controladores
+      │
+      ├── Filtros
+      │
+      ▼
+Capa DAO
+      │
+      ▼
+Base de Datos
+```
+
+## Autor
+
+**Gastón Pini**
+
+Backend Developer | Data Engineer | Lic. en Bioinformática
+
+[LinkedIn](https://www.linkedin.com/in/gaston-pini/) · [GitHub](https://github.com/GastonPini)

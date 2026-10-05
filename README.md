@@ -66,4 +66,4 @@ Database
 **Gastón Pini**  
 Backend Developer | Data Engineer | Bioinformatics
 
-[LinkedIn](TU_LINK_DE_LINKEDIN) · [GitHub](https://github.com/GastonPini)
+[LinkedIn](https://www.linkedin.com/in/gaston-pini) · [GitHub](https://github.com/GastonPini)
